@@ -1,1 +1,1 @@
-<h2>Project with for Classes and Objects lecture</h2>
+<h2>Project with demos for Classes and Objects lecture</h2>
