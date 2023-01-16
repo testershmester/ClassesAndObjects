@@ -10,7 +10,7 @@ public class DocNumberUtils {
     }
 
     public static void printThreeLettersBlocksAsStarsRegex(String docNumber) {
-        String s = docNumber.replaceAll("\\[a-zA-Z]{3}", "*");
+        String s = docNumber.replaceAll("\\[a-zA-Z]{3}", "***");
         System.out.println("Блоки из трёх букв заменить на ***: " + s);
     }
 
@@ -46,7 +46,6 @@ public class DocNumberUtils {
                 sb.append(blocks[i])
                   .append("/");
             }
-
         }
         char[] chars = blocks[4].toCharArray();
         for (char symbol : chars) {
