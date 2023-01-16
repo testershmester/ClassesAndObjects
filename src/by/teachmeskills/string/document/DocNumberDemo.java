@@ -20,5 +20,6 @@ public class DocNumberDemo {
         DocNumberUtils.containsAbc(docNumber);
 
         DocNumberUtils.isWordPalindrome("andna", 0);
+        DocNumberUtils.findWordWithMinOfDiffSymbols("fffff ab f 1234 jkjk");
     }
 }

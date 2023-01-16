@@ -69,6 +69,37 @@ public class DocNumberUtils {
         }
     }
 
+    /*3. Дана строка произвольной длины с произвольными словами.
+    Найти слово, в котором число различных символов минимально. Слово
+    может содержать буквы и цифры.
+    Если таких слов несколько, найти первое из них.
+    Например, в строке "fffff ab f 1234 jkjk" найденное слово должно быть "fffff".*/
+    public static String findWordWithMinOfDiffSymbols(String string) {
+        System.out.println("Исходная строка: " + string);
+        String[] words = string.split(" ");
+        int[] uniqueSymbolsCount = new int[words.length];
+        for (int i = 0; i < words.length; i++) {
+            StringBuilder buffer = new StringBuilder();
+            char[] chars = words[i].toCharArray();
+            for (char symbol : chars) {
+                if (!buffer.toString().contains(String.valueOf(symbol))) {
+                    buffer.append(symbol);
+                }
+            }
+            uniqueSymbolsCount[i] = buffer.toString().length();
+        }
+        int min = uniqueSymbolsCount[0];
+        int index = 0;
+        for (int i = 0; i < uniqueSymbolsCount.length; i++) {
+            if (min > uniqueSymbolsCount[i]) {
+                min = uniqueSymbolsCount[i];
+                index = i;
+            }
+        }
+        System.out.println("Cлово, в котором число различных символов минимально: " + words[index]);
+        return words[index];
+    }
+
     /*4. Дана строка произвольной длины с произвольными словами.
     Написать программу для проверки является ли любое выбранное слово в
     строке палиндромом.
