@@ -16,10 +16,10 @@ public class BoxDemo {
         container.printBalls();
         container.addBalls(balls);
         container.printBalls();
-        container.getSizeOfEachBall();
-        container.getSummaryBallsSize();
+        container.printSizeOfEachBall();
+        container.getSumOfBallsSizes();
         container.getBallsAmount();
-        container.getBallIfExist(ball);
+        container.checkBallIfExist(ball);
         container.removeBall(ball);
         container.printBalls();
         container.cleanUpContainer();

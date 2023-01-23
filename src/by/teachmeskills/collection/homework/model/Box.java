@@ -13,7 +13,6 @@ import java.util.stream.Collectors;
 public class Box extends Container {
 
     private int size;
-    private Set<Ball> balls;
 
     public Box(int size) {
         this.size = size;

@@ -19,7 +19,7 @@ import java.util.Set;
  */
 public class Container {
 
-    private Set<Ball> balls;
+    protected Set<Ball> balls;
 
     public Container() {
         this.balls = new HashSet<>();
@@ -54,7 +54,7 @@ public class Container {
         this.balls.clear();
     }
 
-    public void getBallIfExist(Ball ball) {
+    public boolean checkBallIfExist(Ball ball) {
         boolean matches = this.balls.stream()
                                     .anyMatch(b -> balls.contains(ball));
         if (matches) {
@@ -62,18 +62,20 @@ public class Container {
         } else {
             System.out.println(ball.toString() + " does not exist in " + balls);
         }
+        return matches;
     }
 
-    public void getSizeOfEachBall() {
+    public void printSizeOfEachBall() {
         System.out.println("Balls sizes:");
         this.balls.forEach(b -> System.out.println(b.getSize()));
     }
 
-    public void getSummaryBallsSize() {
+    public int getSumOfBallsSizes() {
         int sum = this.balls.stream()
                             .mapToInt(Ball::getSize)
                             .sum();
         System.out.println("Sum of all balls sizes is: " + sum);
+        return sum;
     }
 
     public void printBalls() {
